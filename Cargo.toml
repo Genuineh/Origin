@@ -1,26 +1,27 @@
 [workspace]
 resolver = "2"
+# Workspace members will be uncommented as each crate is created
 members = [
     # Core Engine Crates (Layer 0-6 + Core modules)
-    "crates/origin-core",
-    "crates/origin-platform",
-    "crates/origin-gpu",
-    "crates/origin-sdf",
-    "crates/origin-instance",
-    "crates/origin-geometry",
-    "crates/origin-layout",
-    "crates/origin-input",
-    "crates/origin-renderer",
-    "crates/origin-app",
+    # Uncomment as each crate is initialized:
+    # "crates/origin-core",
+    # "crates/origin-platform",
+    # "crates/origin-gpu",
+    # "crates/origin-sdf",
+    # "crates/origin-instance",
+    # "crates/origin-geometry",
+    # "crates/origin-layout",
+    # "crates/origin-input",
+    # "crates/origin-renderer",
+    # "crates/origin-app",
     
     # Design Software Adapters (Layer 7 implementations)
-    "adapters/origin-figma",
-    "adapters/origin-pixso",
-    "adapters/origin-sketch",
-    "adapters/origin-penpot",
-    
-    # Common Adapter Utilities
-    "adapters/origin-adapter-common",
+    # Uncomment as each adapter is initialized:
+    # "adapters/origin-adapter-common",
+    # "adapters/origin-figma",
+    # "adapters/origin-pixso",
+    # "adapters/origin-sketch",
+    # "adapters/origin-penpot",
 ]
 
 [workspace.package]
