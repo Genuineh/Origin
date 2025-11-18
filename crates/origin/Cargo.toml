@@ -1,0 +1,25 @@
+[package]
+name = "origin"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+
+[dependencies]
+origin-platform = { path = "../origin-platform" }
+origin-render = { path = "../origin-render" }
+origin-cache = { path = "../origin-cache" }
+origin-primitive = { path = "../origin-primitive" }
+origin-layout = { path = "../origin-layout" }
+origin-tag = { path = "../origin-tag" }
+origin-input = { path = "../origin-input" }
+origin-ui = { path = "../origin-ui" }
+
+[features]
+default = []
+figma = ["dep:origin-figma"]
+
+[dependencies.origin-figma]
+path = "../design-adapters/figma"
+optional = true
