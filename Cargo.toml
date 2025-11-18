@@ -1,0 +1,63 @@
+[workspace]
+resolver = "2"
+members = [
+    # Core Engine Crates (Layer 0-6 + Core modules)
+    "crates/origin-core",
+    "crates/origin-platform",
+    "crates/origin-gpu",
+    "crates/origin-sdf",
+    "crates/origin-instance",
+    "crates/origin-geometry",
+    "crates/origin-layout",
+    "crates/origin-input",
+    "crates/origin-renderer",
+    "crates/origin-app",
+    
+    # Design Software Adapters (Layer 7 implementations)
+    "adapters/origin-figma",
+    "adapters/origin-pixso",
+    "adapters/origin-sketch",
+    "adapters/origin-penpot",
+    
+    # Common Adapter Utilities
+    "adapters/origin-adapter-common",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Origin Team"]
+license = "MIT"
+repository = "https://github.com/Genuineh/Origin"
+
+[workspace.dependencies]
+# Graphics and GPU
+wgpu = "0.18"
+bytemuck = { version = "1.14", features = ["derive"] }
+glam = "0.24"
+
+# Async and concurrency
+tokio = { version = "1", features = ["full"] }
+rayon = "1.8"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Utilities
+anyhow = "1.0"
+thiserror = "1.0"
+log = "0.4"
+env_logger = "0.11"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+strip = true
+
+[profile.dev]
+opt-level = 1
+
+[profile.bench]
+inherits = "release"
